@@ -4,8 +4,6 @@ import random
 ############### Blackjack Project #####################
 print(logo)
 
-# Difficulty Expert 🤯: Only use Hint 1 to complete the project.
-
 ############### Our Blackjack House Rules #####################
 
 ## The deck is unlimited in size.
@@ -18,28 +16,10 @@ print(logo)
 ## Cards are not removed from the deck as they are drawn.
 ## The computer is the dealer.
 
-suits = ['Hearts', 'Diamonds', 'Clubs', 'Spades']
+# Create a list to store the deck of cards
 ranks = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King', 'Ace']
 
-# Create a list to store the deck of cards
-deck = []
 
-
-# Generate the deck of cards
-# for suit in suits:
-#     for rank in ranks:
-#         card = {
-#             'suit': suit,
-#             'rank': rank
-#         }
-#         deck.append(card)
-
-
-# Print the deck of cards
-# for card in deck:
-#     print(card['rank'], 'of', card['suit'])
-
-# Shuffle the deck of cards
 def shuffle_deck():
     random.shuffle(ranks)
 
@@ -71,7 +51,6 @@ player_card_1 = calc_card(random.choice(ranks))
 print(f"Player Draws: {player_card_1}")
 player_card_2 = calc_card(random.choice(ranks))
 print(f"Player Draws: {player_card_2}")
-# print(f"Player Draws: {player_card_1}, {player_card_2}")
 player_total = player_card_1 + player_card_2
 
 # Computer Cards
@@ -79,11 +58,12 @@ computer_card_1 = calc_card(random.choice(ranks))
 print(f"Computer Draws: {computer_card_1}")
 computer_card_2 = calc_card(random.choice(ranks))
 print(f"Computer Draws: ##")
-# print(f"Computer Draws: {computer_card_1}, {computer_card_2}")
 computer_total = computer_card_1 + computer_card_2
 
 user_hit = True
 computer_hit = True
+
+# User Game Loop
 while user_hit:
     user_input = input("Hit or Stand? 'h/s' ").lower()
 
@@ -108,6 +88,7 @@ while user_hit:
         print(f"Computer Reveals: {computer_card_2} and their total is {computer_total} ")
         user_hit = False
 
+# Computer Game Loop
 while computer_hit:
     if computer_total < 17:
         computer_hit = hit()
