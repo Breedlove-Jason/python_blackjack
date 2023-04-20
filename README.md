@@ -11,7 +11,8 @@
       `------'                           |__/           
 ````
 This is a simple command line blackjack game implemented in Python.
-Rules
+
+# Rules
 
 - The deck is unlimited in size.
 - There are no jokers.
